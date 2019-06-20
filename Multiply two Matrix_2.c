@@ -1,4 +1,4 @@
-/* The program is a C Program to Multiply to Matrix Using Multi-dimensional Arrays
+/* The program is a C Program to Multiply two Matrix Using Multi-dimensional Arrays
    Created by : ammar shahin */
 #include <stdio.h>  /* include the header file containing function used */
 
