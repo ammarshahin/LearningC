@@ -1,2 +1,2 @@
-# problems_in_C
-These are my solutions to problems in C
+# LearningC
+This Repo is for learning and solving problems in C
