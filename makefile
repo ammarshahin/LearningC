@@ -13,6 +13,7 @@ CFLAGS:= -O0
 C_DEBUG_FLAGS:= -g
 C_DEBUG_FLAGS+= -Wall
 C_DEBUG_FLAGS+= -Og
+C_DEBUG_FLAGS+= -Xlinker -Map=output.map 
 
 # SRC:= *.c
 SRC:= main.c 
@@ -47,3 +48,9 @@ debug:
 clean:
 	@echo "cleaning... "
 	@rm -rf *.o *.exe
+
+
+git: 
+	@echo "Saving..."
+	@git add .
+	@git cm "Quick Save"
