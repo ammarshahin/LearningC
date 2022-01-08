@@ -17,8 +17,8 @@ C_DEBUG_FLAGS+= -Xlinker -Map=output.map
 
 # SRC:= *.c
 SRC:= main.c 
-SRC+= src/algorithms/binary_search/binary_search.c
-SRC+= src/algorithms/bubble_sort/bubble_sort.c
+# SRC+= src/algorithms/binary_search/binary_search.c
+# SRC+= src/algorithms/bubble_sort/bubble_sort.c
 
 
 all : clean build run
@@ -29,9 +29,7 @@ build:
 	@echo "-------------- Size --------------"
 	@size ${EXC}
 
-st:
-	@echo "-------------- Size --------------"
-	@size ${EXC}
+time:
 	@echo "-------------- Time --------------"
 	@time ${EXC} 
 
@@ -42,13 +40,14 @@ run:
 debug:
 	@echo "building... "
 	@${CC} ${C_DEBUG_FLAGS} ${SRC} -o ${EXC_DEBUG}
+
+size:
 	@echo "-------------- Size --------------"
-	@size ${EXC_DEBUG}
+	@size ${EXC}
 
 clean:
 	@echo "cleaning... "
-	@rm -rf *.o *.exe
-
+	@rm -rf *.o *.exe *.map
 
 git: 
 	@echo "Saving..."
