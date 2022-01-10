@@ -1,12 +1,18 @@
 #include <stdio.h>
+#include <stdbool.h>
+
 int main()
 {
-    int res = 1;
+    int res = 10;
     int Guess = 1;
     float temp = 1;
+
+    printf("Enter your guess: ");
+    scanf("%d", &Guess);
+
     while (res != 0)
     {
-        printf("%d\n", res);
+        // printf("%d\n", res);
         scanf("%d", &Guess);
         if (Guess == 1)
         {

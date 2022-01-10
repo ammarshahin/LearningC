@@ -44,9 +44,7 @@ int main()
 
     /* Array with combinations to the number */
     for (int i = 0; i < SIZE; i++)
-    {
         printf("%d ", pSubarr[i]);
-    }
 
     return 0;
 }

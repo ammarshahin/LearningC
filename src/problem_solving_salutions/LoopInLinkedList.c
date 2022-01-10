@@ -3,29 +3,28 @@
 #include <stdlib.h>
 
 /* Link list node */
-struct Node
+typedef struct Node
 {
     int data;
     struct Node *next;
-};
+} Node;
 
 /* Function to remove loop. Used by detectAndRemoveLoop() */
-void removeLoop(struct Node *, struct Node *);
+void removeLoop(Node *, Node *);
 
-/* This function detects and removes loop in the list 
-If loop was there in the list then it returns 1, 
+/* This function detects and removes loop in the list
+If loop was there in the list then it returns 1,
 otherwise returns 0 */
-int detectAndRemoveLoop(struct Node *list)
+int detectAndRemoveLoop(Node *list)
 {
-    struct Node *slow_p = list, *fast_p = list;
+    Node *slow_p = list, *fast_p = list;
 
     while (slow_p && fast_p && fast_p->next)
     {
         slow_p = slow_p->next;
         fast_p = fast_p->next->next;
 
-        /* If slow_p and fast_p meet at some point then there 
-		is a loop */
+        /* If slow_p and fast_p meet at some point then there is a loop */
         if (slow_p == fast_p)
         {
             removeLoop(slow_p, list);
@@ -35,17 +34,17 @@ int detectAndRemoveLoop(struct Node *list)
         }
     }
 
-    /* Return 0 to indeciate that ther is no loop*/
+    /* Return 0 to indicates that ther is no loop*/
     return 0;
 }
 
-/* Function to remove loop. 
-loop_node --> Pointer to one of the loop nodes 
+/* Function to remove loop.
+loop_node --> Pointer to one of the loop nodes
 head --> Pointer to the start node of the linked list */
-void removeLoop(struct Node *loop_node, struct Node *head)
+void removeLoop(Node *loop_node, Node *head)
 {
-    struct Node *ptr1 = head;
-    struct Node *ptr2 = loop_node;
+    Node *ptr1 = head;
+    Node *ptr2 = loop_node;
 
     while (ptr2->next != ptr1)
     {
@@ -54,24 +53,24 @@ void removeLoop(struct Node *loop_node, struct Node *head)
 
         ptr2 = ptr2->next;
     }
-    /* After the end of loop ptr2 is the last node of the loop. So 
-	make next of ptr2 as NULL */
+    /* After the end of loop ptr2 is the last node of the loop. So
+    make next of ptr2 as NULL */
     ptr2->next = NULL;
 }
 
 /* Function to print linked list */
-void printList(struct Node *node)
+void printList(Node *node)
 {
-    while (node != NULL)
+    while (node)
     {
         printf("%d ", node->data);
         node = node->next;
     }
 }
 
-struct Node *newNode(int key)
+Node *newNode(int key)
 {
-    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    Node *temp = (Node *)malloc(sizeof(Node));
     temp->data = key;
     temp->next = NULL;
     return temp;
@@ -80,7 +79,7 @@ struct Node *newNode(int key)
 /* Drier program to test above function*/
 int main()
 {
-    struct Node *head = newNode(50);
+    Node *head = newNode(50);
     head->next = newNode(20);
     head->next->next = newNode(15);
     head->next->next->next = newNode(4);

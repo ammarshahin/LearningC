@@ -1,16 +1,15 @@
 #include <stdio.h>
+#include <stdint.h>
 
-int consectiveZeros(int num)
+uint8_t consecutiveZeros(uint64_t num)
 {
-    char iterativeIndex;
     char firstZeroFlag = 0, secondZeroFlag = 0;
-    char LSB;
     int zerosCount = 0;
     int zerosCountMax = -1;
 
-    for (iterativeIndex = 0; iterativeIndex < (sizeof(int) * 8); iterativeIndex++)
+    for (uint8_t i = 0; i < (sizeof(int) * 8); i++)
     {
-        LSB = (num >> iterativeIndex) & 0x01;
+        uint8_t LSB = (num >> i) & 0x01;
 
         if (LSB == 1)
         {
@@ -43,10 +42,12 @@ int consectiveZeros(int num)
 
 int main()
 {
-    int num, count;
+    uint64_t num;
     printf("Enter the Number: ");
-    scanf("%d", &num);
-    count = consectiveZeros(num);
+    scanf("%llu", &num);
+
+    uint8_t count = consecutiveZeros(num);
     printf("\nthe Number of zeros is: %d\n", count);
+
     return 0;
 }

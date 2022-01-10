@@ -16,7 +16,7 @@ C_DEBUG_FLAGS+= -Og
 C_DEBUG_FLAGS+= -Xlinker -Map=output.map 
 
 # SRC:= *.c
-SRC:= main.c 
+SRC:= src/main.c 
 # SRC+= src/algorithms/binary_search/binary_search.c
 # SRC+= src/algorithms/bubble_sort/bubble_sort.c
 
@@ -26,8 +26,6 @@ all : clean build run
 build: 
 	@echo "building... "
 	@${CC} ${CFLAGS} ${SRC} -o ${EXC}
-	@echo "-------------- Size --------------"
-	@size ${EXC}
 
 time:
 	@echo "-------------- Time --------------"

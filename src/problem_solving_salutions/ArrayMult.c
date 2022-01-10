@@ -1,13 +1,13 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <math.h>
 
 #define SIZE 15
 
-unsigned int *ArrMult(unsigned int *a, unsigned int *b)
+uint8_t *ArrMult(uint8_t *a, uint8_t *b)
 {
-    static unsigned int arrC[SIZE];
-    unsigned int i, mult;
-    for (i = 0; i < SIZE; i++)
+    static uint8_t arrC[SIZE];
+    for (uint8_t i = 0; i < SIZE; i++)
     {
         arrC[i] = a[i] * b[i];
     }
@@ -16,10 +16,10 @@ unsigned int *ArrMult(unsigned int *a, unsigned int *b)
 
 int main(void)
 {
-    unsigned int i = 0;
-    unsigned int arrA[SIZE];
-    unsigned int arrB[SIZE];
-    unsigned int *arrC;
+    uint8_t i = 0;
+    uint8_t arrA[SIZE];
+    uint8_t arrB[SIZE];
+    uint8_t *arrC;
 
     for (i = 0; i < SIZE; i++)
     {

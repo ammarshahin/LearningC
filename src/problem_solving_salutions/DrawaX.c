@@ -2,10 +2,9 @@
 
 void DrawXshape(unsigned char rows)
 {
-    int i, j;
-    for (i = 0; i < rows; i++)
+    for (int i = 0; i < rows; i++)
     {
-        for (j = 0; j < rows; j++)
+        for (int j = 0; j < rows; j++)
         {
             if ((j == i) || (j == rows - i - 1))
             {

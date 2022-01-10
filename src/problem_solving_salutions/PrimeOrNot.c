@@ -1,32 +1,30 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-char primeORnot(int n)
+bool is_prime(int n)
 {
-    int i;
-    char flag = 0;
-    for (i = 2; i <= (n / 2); i++)
+    bool ret = false;
+    for (int i = 2; i <= (n / 2); i++)
     {
         if (n % i == 0)
         {
-            flag = 1;
+            ret = true;
             break;
         }
     }
-    return flag;
+    return ret;
 }
 
 int main()
 {
-    int n;
-    char flag;
     printf("Enter a positive integer: ");
+    int n;
     scanf("%d", &n);
-    flag = primeORnot(n);
 
-    if (flag == 0)
+    if (is_prime(n))
         printf("%d is a prime number.", n);
     else
-        printf("%d is not a prime number.", n);
+        printf("%d isn't a prime number.", n);
 
     return 0;
 }

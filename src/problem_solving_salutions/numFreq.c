@@ -1,47 +1,53 @@
 #include <stdio.h>
-#include <math.h>
+#include <stdint.h>
 
 #define SIZE 10
 
-char digitFreq(unsigned long long num, unsigned char digit)
+uint8_t *allNumFreq(uint64_t num)
 {
-    unsigned char rem, counter = 0;
+    static uint8_t arr[SIZE];
     while (num)
     {
-        rem = num % 10;
-        num = num / 10;
-        if (digit == rem)
-            counter++;
-    }
-    return counter;
-}
-
-unsigned char *allNumFreq(unsigned long long num)
-{
-    static unsigned char arr[SIZE];
-    unsigned char rem;
-    while (num)
-    {
-        rem = num % 10;
+        uint8_t rem = num % 10;
         num /= 10;
         arr[rem]++;
     }
     return &arr[0];
 }
 
+uint8_t digitFreq(uint64_t num, uint8_t digit)
+{
+    uint8_t counter = 0;
+    while (num)
+    {
+        uint8_t rem = num % 10;
+        num /= 10;
+        if (digit == rem)
+            counter++;
+    }
+    return counter;
+}
+
 int main(void)
 {
-    unsigned long long x = 5342546168454241358;
+    uint64_t x = 5342546168454241358;
 
-    int digit, digitCounter;
+    uint8_t digit;
     scanf("%d", &digit);
-    digitCounter = digitFreq(x, digit);
-    printf("%d ", digitCounter);
 
-#if 0
-    unsigned char *arr;
+    if (digit < 10)
+    {
+        printf("%d\n", digitFreq(x, digit));
+    }
+    else
+    {
+        printf("Wrong Entry: Number should be between 0 and 9\n");
+    }
+
+#if 1
+    uint8_t *arr;
     arr = allNumFreq(x);
-    for (int i = 0; i < SIZE; i++)
+    for (uint8_t i = 0; i < SIZE; i++)
     {
         printf("%d ", arr[i]);
     }

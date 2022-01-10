@@ -2,9 +2,8 @@
 
 int main(void)
 {
-    int x = 1;
-    char *px;
-    px = (char *)&x;
+    int x = 0x1000;   //*  x = 0x12345678
+    char *px = (char *)&x;
 
     if (*px)
         printf("Little Endian\n");

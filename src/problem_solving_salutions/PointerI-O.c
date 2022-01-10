@@ -15,14 +15,12 @@ void func(pFun pToFunc, char *a, char *b, char *c)
 
 int main(void)
 {
-    char *ptr;
     char x = 'a';
-    ptr = &x;
+    char *ptr = &x;
     func(testPrint, ptr, ptr, ptr);
 
     /* Simpler way */
-    pFun ptestPrint;
-    ptestPrint = testPrint;
+    pFun ptestPrint = testPrint;
     ptestPrint();
     return 0;
 }
