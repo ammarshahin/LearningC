@@ -1,7 +1,10 @@
+# varibles 
 SHELL:= usr/bin/bash
 CC:= gcc
-EXC:= ./release.exe
+EXC:= ./out.exe
 EXC_DEBUG:= ./debug.exe
+
+# Compiler flags
 
 # optmization levels 0,1,2,3,s(size),g(Debugging), fast
 # warrning levels -w, -Wall, -Werror
