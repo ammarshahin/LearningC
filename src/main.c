@@ -2,7 +2,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-int main(int argc, char const *argv[])
+int main()
 {
+    char* name  = "Ammar";
+    printf("%s\n", name);
     return 0;
 }
