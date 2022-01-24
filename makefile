@@ -10,7 +10,7 @@ EXC_DEBUG:= ./debug.exe
 # warrning levels -w, -Wall, -Werror
 CFLAGS:= -O0
 # CFLAGS+= --strip-all
-# CFLAGS+= -Wall
+CFLAGS+= -Wall
 
 # Debugging flags
 C_DEBUG_FLAGS:= -g
