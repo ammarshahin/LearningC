@@ -8,6 +8,6 @@ typedef struct
 
 } foundStr;
 
-extern foundStr binary_search(int *arr, const int size, const int key);
+extern foundStr binary_search(const int *arr, const int size, const int key);
 
 #endif

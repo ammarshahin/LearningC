@@ -8,7 +8,7 @@
 
 #define Debug 1
 
-extern foundStr binary_search(int *arr, const int size, const int key)
+extern foundStr binary_search(const int *arr, const int size, const int key)
 {
     foundStr found = {-1, 0};
 

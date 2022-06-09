@@ -2,16 +2,12 @@
    Created by : ammar shahin */
 
 /* include the header file containing function used */
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdint.h>
 #include "linear_search.h"
 
 /* Public API's */
-extern foundStr linear_search(int *arr, const int size, const int key)
+extern foundStr linear_search(const int *arr, const int size, const int key)
 {
 
-    int ret = -1;   // return -1 is the element wasn't found
     foundStr found = {-1, 0};
     /* Applying the Algorithm */
     int index;

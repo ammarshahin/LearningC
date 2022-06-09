@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
-// #include "src/algorithms/linear_search/linear_search.h"
-#include "src/algorithms/linear_search/linear_search.h"
+#include "linear_search.h"
 
 #define SIZE 13
 
@@ -22,7 +21,7 @@ int main()
 
     //! Searching...
     printf("\n\nSearching...\n\n");
-    foundStr found = linear_search(arr, SIZE, key);
+    foundStr found = linear_search((const int *)arr, SIZE, key);
     if (found.first_found_index == -1)
         printf("NOT FOUND!!!\n");
     else

@@ -1,5 +1,5 @@
 # varibles 
-SHELL:= usr/bin/bash
+SHELL:= /usr/bin/bash
 CC:= gcc
 EXC:= ./out.exe
 EXC_DEBUG:= ./debug.exe

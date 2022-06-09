@@ -4,7 +4,7 @@
 
 int main()
 {
-    char* name  = "Ammar";
+    char *name = "Ammar";
     printf("%s\n", name);
     return 0;
 }
